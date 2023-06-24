@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Website</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #73c8ff, #0086ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container-box {
+      max-width: 500px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container-box">
+    <div class="container">
+      <h1>Edit Note</h1>
+      <form action="/updateNote/<%- notes.id %>" method="post" class="center-align">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" name="title" value="<%- notes.title %>">
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" name="description" value="<%- notes.description %>"><%- notes.description %></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author's Name</label>
+          <input type="text" class="form-control" name="author" value="<%- notes.author %>">
+        </div>
+        <button type="submit" class="btn btn-success"> Edit Note</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <!-- <script src="https://unpkg.com/bootstrap-icons@1.7.3/dist/js/bootstrap-icons.min.js"></script> -->
+</body>
+</html>
